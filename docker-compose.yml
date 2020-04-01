@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  db:
+    image: mariadb:10.4
+    restart: always
+    env_file: ./mariadb.env
+    volumes:
+      - ./data/db:/var/lib/mysql
+
+  wordpress:
+    image: webdevops/php-nginx:alpine-php7
+    restart: always
+    volumes:
+      - ./wordpress/wp_vhost.conf:/opt/docker/etc/nginx/vhost.common.d/wp_vhost.conf
+      - ./data/wp:/app
+    ports:
+      - 80:80
+      - 443:443
