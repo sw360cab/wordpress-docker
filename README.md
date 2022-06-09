@@ -25,7 +25,7 @@ This project provides docker compose services configuration for:
 5. Uncomment and modify server name in **${project}/wordpress/wp_vhost.conf**, setting the one of your virtual server:
 
        server_name <your_dns_hostname>
-6. (opt.) Add SLL/TLS certificates into Nginx, mapping files onto the following container paths:
+6. (opt.) Add SSL/TLS certificates into Nginx, mapping files onto the following container paths:
     * Certificate - **/opt/docker/etc/nginx/ssl/server.crt**
     * Private Key - **/opt/docker/etc/nginx/ssl/server.key**
 
